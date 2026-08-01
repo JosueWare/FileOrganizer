@@ -1,4 +1,4 @@
-![PowerShell](https://shields.io)
+![PowerShell](https://powershellgallery.com/Content/Images/Branding/packageDefaultIcon.svg)
 
 # File Organizer
 O **FileOrganizer** faz que os arquivos todos bagunçados em uma determinada pasta sejam separados em cada pastas de tipos de arquivos, seja Fotos, Vídeos, GIFs, Documentos e etc. Utilizando o PowerShell para automações.
