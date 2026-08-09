@@ -1,18 +1,9 @@
 # Logon
 
-    <#--[VAR]--#>
-
-        $current_MyDocuments = "$folderMyDocuments\FileOrganizer"
-
-        $current_MyPictures = "$folderMyPictures\FileOrganizer"
-
-        $current_MyVideos = "$folderMyVideos\FileOrganizer"
-
-    <#--[Functions]--#>
-
-        # Retornar
-
-            function R {& ".\Config\Navigation\main.ps1"}
+    # ENV
+    $current_MyDocuments = "$folderMyDocuments\FileOrganizer"
+    $current_MyPictures = "$folderMyPictures\FileOrganizer"
+    $current_MyVideos = "$folderMyVideos\FileOrganizer"
 
 # Begin
 
@@ -28,19 +19,19 @@ Write-Host "    Movendo.."
 
         # Documentos
 
-            Move-Item -Path "Source\*.txt" -Destination "$current_MyDocuments"
+            Move-Item -Path "Media\*.txt" -Destination "$current_MyDocuments"
 
         # Imagens
 
-            Move-Item -Path "Source\*.png" -Destination "$current_MyPictures"
+            Move-Item -Path "Media\*.png" -Destination "$current_MyPictures"
 
-            Move-Item -Path "Source\*.jpg" -Destination "$current_MyPictures" 
+            Move-Item -Path "Media\*.jpg" -Destination "$current_MyPictures" 
 
-            Move-Item -Path "Source\*.jpeg" -Destination "$current_MyPictures"
+            Move-Item -Path "Media\*.jpeg" -Destination "$current_MyPictures"
 
         # Vídeos
 
-            Move-Item -Path "Source\*.mp4" -Destination "$current_MyVideos"
+            Move-Item -Path "Media\*.mp4" -Destination "$current_MyVideos"
 
 
 # Fim

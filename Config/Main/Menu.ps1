@@ -2,7 +2,7 @@
 
 Set-Location "$PSScriptRoot\..\..\"
 
-    <#--VAR--[INI]#>
+    # ENV
 
         # System Folders
 
@@ -10,32 +10,23 @@ Set-Location "$PSScriptRoot\..\..\"
             $folderMyPictures = [System.Environment]::GetFolderPath('MyPictures')
             $folderMyVideos = [System.Environment]::GetFolderPath('MyVideos')
 
-    <#--VAR--[END]#>
-
-    <#--ScriptsBlocks--[INI]#>
+    # Scripts Blocks
 
         # Default
 
             $ExitTerminalSession = {
-
                 Clear-Host
-
-                    Start-Sleep -Seconds 1
-
-                Stop-Process -Id $PID
+                Set-Location $HOME
             }
 
             $InvalidResponse = {
-
                 Clear-Host
 
                     Write-Host "" <#SPACE#>
                 Write-Host "    Resposta inválida" -ForegroundColor Red
                     Write-Host "" <#SPACE#>
 
-                    Start-Sleep -Seconds 2
-
-                Stop-Process -Id $PID
+                Set-Location $HOME
             }
 
         # Make Dir
@@ -55,13 +46,14 @@ Set-Location "$PSScriptRoot\..\..\"
                 New-Item -Path "$folderMyVideos\FileOrganizer" -ItemType Directory -Force
             }
 
-    <#--ScriptsBlocks--[END]#>
+    # Functions
+    function R {& ".\Config\Navigation\main.ps1"}
 
 # Init
 
     <#--CHECK--[INI]#>
 
-        if (-not (Test-Path "Source" -ErrorAction SilentlyContinue)) {New-Item "Source" -ItemType Directory -Force}
+        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {New-Item "Media" -ItemType Directory -Force}
 
         # Make: User Folders
 
