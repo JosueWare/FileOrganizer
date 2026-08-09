@@ -1,6 +1,6 @@
 # ENV
-$main_file = Resolve-Path ".\Config\Navigation\main.ps1"
-$dep_file = Resolve-Path ".\Config\Navigation\Help\depedences.ps1"
+$main_file = Resolve-Path ".\Config\Main\Menu.ps1"
+$dep_file = Resolve-Path ".\Config\Main\Help\Depedences.ps1"
 
 # Init
 if (Get-Command "pwsh.exe" -ErrorAction SilentlyContinue) {
