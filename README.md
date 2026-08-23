@@ -15,6 +15,18 @@ Antes de começar usar siga os passo a passo.
 
 O Script possui suporte a diversas extensões de arquivos, incluindo: 
 
-- Imagens: PNG, JPG, JPEG
-- Vídeos: MP4
-- Documentos: TXT
+- Imagens:
+  - PNG
+  - JPG
+  - JPEG
+  - GIF
+  - BMP
+  - SVG
+  - WEBP
+  - AVIF
+  - APNG
+  - RAW
+- Vídeos:
+  - MP4
+- Documentos:
+  - TXT

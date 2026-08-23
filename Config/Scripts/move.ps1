@@ -28,6 +28,20 @@ Write-Host "    Movendo.."
 
             Move-Item -Path "Media\*.jpeg" -Destination $current_MyPictures
 
+            Move-Item -Path "Media\*.gif" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.bmp" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.svg" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.webp" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.avif" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.apng" -Destination $current_MyPictures
+
+            Move-Item -Path "Media\*.raw" -Destination $current_MyPictures
+
         # Vídeos
 
             Move-Item -Path "Media\*.mp4" -Destination $current_MyVideos
