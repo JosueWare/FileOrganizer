@@ -1,2 +1,5 @@
-# Root
+# [Root] Folders
+/.github/.private/*
 /Media/*
+
+!/.github/.private/.gitkeep
