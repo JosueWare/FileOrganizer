@@ -16,7 +16,8 @@ Set-Location "$PSScriptRoot\..\..\"
 
             $ExitTerminalSession = {
                 Clear-Host
-                Set-Location $HOME
+                Start-Sleep -Milliseconds 500
+                $host.SetShouldExit(0)
             }
 
             $InvalidResponse = {
@@ -45,9 +46,6 @@ Set-Location "$PSScriptRoot\..\..\"
 
                 New-Item -Path "$folderMyVideos\FileOrganizer" -ItemType Directory -Force
             }
-
-    # Functions
-    function R {& ".\Config\Navigation\main.ps1"}
 
 # Init
 
