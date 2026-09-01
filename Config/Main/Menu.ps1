@@ -5,47 +5,44 @@ Set-Location "$PSScriptRoot\..\..\"
     # ENV
 
         # System Folders
-
-            $folderMyDocuments = [System.Environment]::GetFolderPath('MyDocuments')
-            $folderMyPictures = [System.Environment]::GetFolderPath('MyPictures')
-            $folderMyVideos = [System.Environment]::GetFolderPath('MyVideos')
+        $folderMyDocuments = [System.Environment]::GetFolderPath('MyDocuments')
+        $folderMyPictures = [System.Environment]::GetFolderPath('MyPictures')
+        $folderMyVideos = [System.Environment]::GetFolderPath('MyVideos')
 
     # Scripts Blocks
 
         # Default
+        $ExitTerminalSession = {
+            Clear-Host
+            Start-Sleep -Milliseconds 500
+            $host.SetShouldExit(0)
+        }
 
-            $ExitTerminalSession = {
-                Clear-Host
-                Start-Sleep -Milliseconds 500
-                $host.SetShouldExit(0)
-            }
+        $InvalidResponse = {
+            Clear-Host
 
-            $InvalidResponse = {
-                Clear-Host
+                Write-Host "" <#SPACE#>
+            Write-Host "    Resposta inválida" -ForegroundColor Red
+                Write-Host "" <#SPACE#>
 
-                    Write-Host "" <#SPACE#>
-                Write-Host "    Resposta inválida" -ForegroundColor Red
-                    Write-Host "" <#SPACE#>
-
-                Set-Location $HOME
-            }
+            Set-Location $HOME
+        }
 
         # Make Dir
-
-            [scriptblock]$make_dirDocs = {
+        [scriptblock]$make_dirDocs = {
 
                 New-Item -Path "$folderMyDocuments\FileOrganizer" -ItemType Directory -Force
-            }
+        }
 
-            [scriptblock]$make_dirPics = {
+        [scriptblock]$make_dirPics = {
 
                 New-Item -Path "$folderMyPictures\FileOrganizer" -ItemType Directory -Force
-            }
+        }
 
-            [scriptblock]$make_dirVids = {
+        [scriptblock]$make_dirVids = {
 
                 New-Item -Path "$folderMyVideos\FileOrganizer" -ItemType Directory -Force
-            }
+        }
 
 # Init
 
