@@ -71,7 +71,7 @@ Clear-Host
 
         switch ($questStart_FileOrganizer) {
 
-            "S" {& ".\Config\Scripts\Move.ps1"}
+            "S" {& ".\Config\Scripts\MoveItems.ps1"}
             "N" {& $ExitTerminalSession}
 
             Default {& $InvalidResponse}
