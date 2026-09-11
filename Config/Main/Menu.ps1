@@ -1,6 +1,5 @@
+Set-Location "$PSScriptRoot\..\.."
 # Logon
-
-Set-Location "$PSScriptRoot\..\..\"
 
     # ENV
 
