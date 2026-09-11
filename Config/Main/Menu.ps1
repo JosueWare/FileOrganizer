@@ -11,13 +11,13 @@ Set-Location "$PSScriptRoot\..\.."
     # Scripts Blocks
 
         # Default
-        $ExitTerminalSession = {
+        [scriptblock]$ExitTerminalSession = {
             Clear-Host
             Start-Sleep -Milliseconds 500
             $host.SetShouldExit(0)
         }
 
-        $InvalidResponse = {
+        [scriptblock]$InvalidResponse = {
             Clear-Host
 
                 Write-Host "" <#SPACE#>
