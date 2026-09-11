@@ -29,15 +29,15 @@ Set-Location "$PSScriptRoot\..\.."
 
         # Make Dir
         [scriptblock]$make_dirDocs = {
-            New-Item (Join-Path -Path "$folderMyDocuments" "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ItemType Directory -Force
         }
 
         [scriptblock]$make_dirPics = {
-            New-Item (Join-Path -Path "$folderMyPictures" "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ItemType Directory -Force
         }
 
         [scriptblock]$make_dirVids = {
-            New-Item (Join-Path -Path "$folderMyVideos" "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ItemType Directory -Force
         }
 
         # Check dir 'Media'
@@ -45,28 +45,13 @@ Set-Location "$PSScriptRoot\..\.."
 
         # Make: User Folders
 
-            if (-not (Test-Path -Path "$folderMyDocuments\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirDocs}
+            if (-not (Test-Path (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirDocs}
 
-            if (-not (Test-Path -Path "$folderMyPictures\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirPics}
+            if (-not (Test-Path (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirPics}
 
-            if (-not (Test-Path -Path "$folderMyVideos\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirVids}
+            if (-not (Test-Path (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirVids}
 
 # Menu
-
-    <#--CHECK--[INI]#>
-
-        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {New-Item "Media" -ItemType Directory -Force}
-
-        # Make: User Folders
-
-            if (-not (Test-Path -Path "$folderMyDocuments\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirDocs}
-
-            if (-not (Test-Path -Path "$folderMyPictures\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirPics}
-
-            if (-not (Test-Path -Path "$folderMyVideos\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirVids}
-
-    <#--CHECK--[END]#>
-
 Clear-Host
 
         Write-Host "" <#SPACE#>
