@@ -29,19 +29,21 @@ Set-Location "$PSScriptRoot\..\.."
 
         # Make Dir
         [scriptblock]$make_dirDocs = {
-            New-Item (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirPics = {
-            New-Item (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirVids = {
-            New-Item (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ItemType Directory -Force
+            New-Item (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         # Check dir 'Media'
-        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {New-Item "Media" -ItemType Directory -Force}
+        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {
+            New-Item "Media" -ItemType Directory -Force | Out-Null
+        }
 
         # Make: User Folders
 
