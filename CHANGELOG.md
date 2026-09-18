@@ -1,6 +1,7 @@
 # Changelog
 
-## [1.0.6-beta] 11-09-2026
+## 1.0.6-beta
+18-09-2026
 
 ### Changed
 - Mudanças nas estruturas dos scripts `.ps1`.
