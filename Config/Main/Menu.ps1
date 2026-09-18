@@ -1,4 +1,4 @@
-Set-Location "$PSScriptRoot\..\.."
+Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 # Logon
 
     # ENV
@@ -7,6 +7,7 @@ Set-Location "$PSScriptRoot\..\.."
         $folderMyDocuments = [System.Environment]::GetFolderPath('MyDocuments')
         $folderMyPictures = [System.Environment]::GetFolderPath('MyPictures')
         $folderMyVideos = [System.Environment]::GetFolderPath('MyVideos')
+        $folderMyMusics = [System.Environment]::GetFolderPath('MyMusic')
 
     # Scripts Blocks
 
