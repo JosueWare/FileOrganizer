@@ -74,7 +74,7 @@ Clear-Host
 
         switch ($questStart_FileOrganizer) {
 
-            "S" {& ".\Config\Scripts\MoveItems.ps1"}
+            "S" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
             "N" {& $ExitTerminalSession}
 
             Default {& $InvalidResponse}
