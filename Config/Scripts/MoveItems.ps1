@@ -7,9 +7,9 @@ $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 # Init
 Clear-Host
 
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 Write-Host "    Movendo.."
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 
     Start-Sleep -Seconds 1
 
@@ -41,14 +41,14 @@ Write-Host "    Movendo.."
 
 Clear-Host
 
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 Write-Host "    Movidos!" -ForegroundColor Green
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 
     Start-Sleep -Seconds 1
 
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 Write-Host "        Se quiser organizar novamente digite 'R' "
-    Write-Host "" <#SPACE#>
+    Write-Host "" <##>
 
 Set-Location $HOME

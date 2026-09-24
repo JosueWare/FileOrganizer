@@ -21,9 +21,9 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
         [scriptblock]$InvalidResponse = {
             Clear-Host
 
-                Write-Host "" <#SPACE#>
+                Write-Host "" <##>
             Write-Host "    Resposta inválida" -ForegroundColor Red
-                Write-Host "" <#SPACE#>
+                Write-Host "" <##>
 
             Set-Location $HOME
         }
@@ -57,18 +57,18 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 # Menu
 Clear-Host
 
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
     Write-Host "                FileOrganizer"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
 
         Start-Sleep -Seconds 1
 
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
     Write-Host "    Deseja iniciar a organização agora?"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
         Start-Sleep -Seconds 1
     Write-Host "        [S] Sim / [N] Não"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
 
     $questStart_FileOrganizer = Read-Host
 
