@@ -41,6 +41,10 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
             New-Item (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
+        [scriptblock]$make_dirMscs = {
+            New-Item (Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
+        }
+
         # Check dir 'Media'
         if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {
             New-Item "Media" -ItemType Directory -Force | Out-Null
@@ -48,11 +52,13 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 
         # Make: User Folders
 
-            if (-not (Test-Path (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirDocs}
+            if (-not (Test-Path (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer"))) {& $make_dirDocs}
 
-            if (-not (Test-Path (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirPics}
+            if (-not (Test-Path (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer"))) {& $make_dirPics}
 
-            if (-not (Test-Path (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirVids}
+            if (-not (Test-Path (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer"))) {& $make_dirVids}
+
+            if (-not (Test-Path (Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"))) {& $make_dirMscs}
 
 # Menu
 Clear-Host
