@@ -8,7 +8,7 @@ $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 Clear-Host
 
     Write-Host "" <##>
-Write-Host "    Movendo.." -NoNewline
+Write-Host "    Movendo.." -ForegroundColor Yellow -NoNewline
 
     Start-Sleep -Seconds 1
 
@@ -42,5 +42,5 @@ Write-Host "    Movendo.." -NoNewline
             Move-Item -Path "Media\$list" -Destination $target_MyMsc -ErrorAction SilentlyContinue
         }
 
-Write-Host "    Pronto" -ForegroundColor Green
+Write-Host " Pronto" -ForegroundColor Green
     Write-Host "" <##>
