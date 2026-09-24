@@ -30,15 +30,15 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 
         # Make Dir
         [scriptblock]$make_dirDocs = {
-            New-Item (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
+            New-Item (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirPics = {
-            New-Item (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
+            New-Item (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirVids = {
-            New-Item (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
+            New-Item (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         # Check dir 'Media'
@@ -48,11 +48,11 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 
         # Make: User Folders
 
-            if (-not (Test-Path (Join-Path -Path "$folderMyDocuments" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirDocs}
+            if (-not (Test-Path (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirDocs}
 
-            if (-not (Test-Path (Join-Path -Path "$folderMyPictures" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirPics}
+            if (-not (Test-Path (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirPics}
 
-            if (-not (Test-Path (Join-Path -Path "$folderMyVideos" -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirVids}
+            if (-not (Test-Path (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer") -ErrorAction SilentlyContinue)) {& $make_dirVids}
 
 # Menu
 Clear-Host

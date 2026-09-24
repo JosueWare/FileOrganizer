@@ -1,8 +1,8 @@
 # ENV
-$target_MyDocs
-$target_MyPics
-$target_MyVids
-$target_MyMsc
+$target_MyDocs = Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer"
+$target_MyPics = Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer"
+$target_MyVids = Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer"
+$target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 
 # Init
 Clear-Host
