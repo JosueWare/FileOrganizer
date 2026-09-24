@@ -1,11 +1,11 @@
 # Changelog
 
-## 1.0.6-beta
-18-09-2026
+## 1.0.6 (Unreleased)
+23-09-2026
 
 ### Changed
 - Mudanças nas estruturas dos scripts `.ps1`.
-  Todas as orientações de diretórios foram modificada para uma forma mais segura sem ter que depender de barras. `/`
+  Todas as orientações de diretórios foram modificada para uma forma mais segura sem ter que depender de barras invertidas `\`
 
   Antes:
   ```powershell
