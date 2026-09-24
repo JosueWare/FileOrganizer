@@ -28,5 +28,7 @@ O Script possui suporte a diversas extensões de arquivos, incluindo:
   - RAW
 - Vídeos:
   - MP4
+  - MKV
 - Documentos:
   - TXT
+  - MD (Markdown)
