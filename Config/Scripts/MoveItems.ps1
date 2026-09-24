@@ -26,14 +26,14 @@ Write-Host "    Movendo.."
         $listed_Pictures = @("*.png", "*.jpg", "*.jpeg", "*.gif", "*.bmp", "*.svg", "*.webp", "*.avif", "*.apng", "*.raw")
 
         foreach ($list in $listed_Pictures) {
-            Move-Item -Path "Media\$list"
+            Move-Item -Path "Media\$list" -Destination $folderMyPictures
         }
 
         # Vídeos
         $listed_Videos = @("*.mp4", "*.mkv")
 
         foreach ($list in $listed_Videos) {
-            Move-Item -Path "Media\$list"
+            Move-Item -Path "Media\$list" -Destination $folderMyVideos
         }
 
 
