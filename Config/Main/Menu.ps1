@@ -1,6 +1,5 @@
+Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 # Logon
-
-Set-Location "$PSScriptRoot\..\..\"
 
     # ENV
 
@@ -8,78 +7,80 @@ Set-Location "$PSScriptRoot\..\..\"
         $folderMyDocuments = [System.Environment]::GetFolderPath('MyDocuments')
         $folderMyPictures = [System.Environment]::GetFolderPath('MyPictures')
         $folderMyVideos = [System.Environment]::GetFolderPath('MyVideos')
+        $folderMyMusics = [System.Environment]::GetFolderPath('MyMusic')
 
     # Scripts Blocks
 
         # Default
-        $ExitTerminalSession = {
+        [scriptblock]$ExitTerminalSession = {
             Clear-Host
             Start-Sleep -Milliseconds 500
             $host.SetShouldExit(0)
         }
 
-        $InvalidResponse = {
+        [scriptblock]$InvalidResponse = {
             Clear-Host
 
-                Write-Host "" <#SPACE#>
+                Write-Host "" <##>
             Write-Host "    Resposta inválida" -ForegroundColor Red
-                Write-Host "" <#SPACE#>
+                Write-Host "" <##>
 
             Set-Location $HOME
         }
 
         # Make Dir
         [scriptblock]$make_dirDocs = {
-
-                New-Item -Path "$folderMyDocuments\FileOrganizer" -ItemType Directory -Force
+            New-Item (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirPics = {
-
-                New-Item -Path "$folderMyPictures\FileOrganizer" -ItemType Directory -Force
+            New-Item (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
         [scriptblock]$make_dirVids = {
-
-                New-Item -Path "$folderMyVideos\FileOrganizer" -ItemType Directory -Force
+            New-Item (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
         }
 
-# Init
+        [scriptblock]$make_dirMscs = {
+            New-Item (Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer") -ItemType Directory -Force | Out-Null
+        }
 
-    <#--CHECK--[INI]#>
-
-        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {New-Item "Media" -ItemType Directory -Force}
+        # Check dir 'Media'
+        if (-not (Test-Path "Media" -ErrorAction SilentlyContinue)) {
+            New-Item "Media" -ItemType Directory -Force | Out-Null
+        }
 
         # Make: User Folders
 
-            if (-not (Test-Path -Path "$folderMyDocuments\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirDocs}
+            if (-not (Test-Path (Join-Path -Path $folderMyDocuments -ChildPath "FileOrganizer"))) {& $make_dirDocs}
 
-            if (-not (Test-Path -Path "$folderMyPictures\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirPics}
+            if (-not (Test-Path (Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer"))) {& $make_dirPics}
 
-            if (-not (Test-Path -Path "$folderMyVideos\FileOrganizer" -ErrorAction SilentlyContinue)) {& $make_dirVids}
+            if (-not (Test-Path (Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer"))) {& $make_dirVids}
 
-    <#--CHECK--[END]#>
+            if (-not (Test-Path (Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"))) {& $make_dirMscs}
 
+# Menu
 Clear-Host
 
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
     Write-Host "                FileOrganizer"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
 
         Start-Sleep -Seconds 1
 
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
     Write-Host "    Deseja iniciar a organização agora?"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
         Start-Sleep -Seconds 1
     Write-Host "        [S] Sim / [N] Não"
-        Write-Host "" <#SPACE#>
+        Write-Host "" <##>
 
     $questStart_FileOrganizer = Read-Host
 
         switch ($questStart_FileOrganizer) {
 
-            "S" {& ".\Config\Scripts\Move.ps1"}
+            "S" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
             "N" {& $ExitTerminalSession}
 
             Default {& $InvalidResponse}
