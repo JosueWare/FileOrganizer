@@ -15,7 +15,7 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
         [scriptblock]$ExitTerminalSession = {
             Clear-Host
             Start-Sleep -Milliseconds 500
-            $host.SetShouldExit(0)
+            (Get-Process -Id $PID).CloseMainWindow()
         }
         [scriptblock]$InvalidResponse = {
             Clear-Host
