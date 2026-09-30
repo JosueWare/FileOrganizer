@@ -73,7 +73,7 @@ Clear-Host
     Write-Host "    Deseja iniciar a organização agora?"
         Write-Host "" <##>
         Start-Sleep -Seconds 1
-    Write-Host "        [S] Sim / [N] Não"
+    Write-Host "        [S] Sim | [N] Não"
         Write-Host "" <##>
 
     $questStart_FileOrganizer = Read-Host

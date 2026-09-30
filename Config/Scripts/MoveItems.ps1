@@ -50,6 +50,8 @@ Write-Host " Pronto" -ForegroundColor Green
     Write-Host ""
 Write-Host "    Deseja voltar ao início?"
     Write-Host ""
+Write-Host "        [S] Sim | [N] Não"
+    Write-Host ""
 
 $questBackToMainMenu = Read-Host
 
