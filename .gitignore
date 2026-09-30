@@ -1,2 +1,4 @@
 # [Root] Folders
 /Media
+/.private/*
+!.gitkeep
