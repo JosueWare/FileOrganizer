@@ -1,13 +1,13 @@
 # ENV
 
     # "Menu.ps1"
-    $fullpath = Join-Path -Path "Config" -ChildPath "Main"
+    $fullpath = Join-Path -Path "GUI" -ChildPath "Main"
     $fullpath = Join-Path -Path $fullpath -ChildPath "Menu.ps1"
 
     $MainScript = $fullpath
 
     # Depedences "dpPwsh.ps1"
-    $fullpath = Join-Path -Path "Config" -ChildPath "Main"
+    $fullpath = Join-Path -Path "GUI" -ChildPath "Main"
     $fullpath = Join-Path -Path $fullpath -ChildPath "Depedences"
     $fullpath = Join-Path -Path $fullpath -ChildPath "dpPwsh.ps1"
 
