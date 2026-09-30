@@ -17,15 +17,15 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
             Start-Sleep -Milliseconds 500
             $host.SetShouldExit(0)
         }
-
         [scriptblock]$InvalidResponse = {
             Clear-Host
 
                 Write-Host "" <##>
             Write-Host "    Resposta inválida" -ForegroundColor Red
                 Write-Host "" <##>
-
-            Set-Location $HOME
+        }
+        [scriptblock]$BackToMainMenu = {
+            & (Join-Path -Path "GUI" -ChildPath @("Main", "Menu"))
         }
 
         # Make Dir
@@ -83,5 +83,9 @@ Clear-Host
             "S" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
             "N" {& $ExitTerminalSession}
 
-            Default {& $InvalidResponse}
+            Default {
+                & $InvalidResponse
+                Start-Sleep -Seconds 1
+                & $BackToMainMenu
+            }
         }

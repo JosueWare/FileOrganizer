@@ -4,10 +4,10 @@ $target_MyPics = Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer"
 $target_MyVids = Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer"
 $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 
-# Init
+# GUI
 Clear-Host
 
-    Write-Host "" <##>
+    Write-Host ""
 Write-Host "    Movendo.." -ForegroundColor Yellow -NoNewline
 
     Start-Sleep -Seconds 1
@@ -43,4 +43,24 @@ Write-Host "    Movendo.." -ForegroundColor Yellow -NoNewline
         }
 
 Write-Host " Pronto" -ForegroundColor Green
-    Write-Host "" <##>
+    Write-Host ""
+
+    Start-Sleep -Milliseconds 500
+
+    Write-Host ""
+Write-Host "    Deseja voltar ao início?"
+    Write-Host ""
+
+$questBackToMainMenu = Read-Host
+
+    switch ($questBackToMainMenu) {
+
+        "S" {& $BackToMainMenu}
+        "N" {& $ExitTerminalSession}
+
+        Default {
+            & $InvalidResponse
+            Start-Sleep -Seconds 1
+            & $BackToMainMenu
+        }
+    }
