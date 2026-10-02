@@ -1,20 +1,16 @@
 # ENV
 
     # "Menu.ps1"
-    $fullpath = Join-Path -Path "Config" -ChildPath "Main"
-    $fullpath = Join-Path -Path $fullpath -ChildPath "Menu.ps1"
-
-    $MainScript = $fullpath
+    $MainScript = @(
+        (Join-Path (Join-Path "GUI" "Main") "Menu.ps1")
+    )
 
     # Depedences "dpPwsh.ps1"
-    $fullpath = Join-Path -Path "Config" -ChildPath "Main"
-    $fullpath = Join-Path -Path $fullpath -ChildPath "Depedences"
-    $fullpath = Join-Path -Path $fullpath -ChildPath "dpPwsh.ps1"
-
-    $Depedences = $fullpath
+    $Depedences = @(
+        (Join-Path (Join-Path (Join-Path "GUI" "Main") "Depedences") "dpPwsh.ps1")
+    )
 
 # Start
-
 if (Get-Command "pwsh" -ErrorAction SilentlyContinue) {
     Start-Process -FilePath "pwsh.exe" -ArgumentList "-NoProfile", "-NoExit", "-Command & $MainScript" -Verb RunAs
 }
