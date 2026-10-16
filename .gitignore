@@ -1,4 +1,5 @@
 # [Root] Folders
+/.env
 /Media
 /.private/*
 !.gitkeep

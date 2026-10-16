@@ -1,4 +1,8 @@
 Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
+
+# Auto DIR
+New-Item ".env" -ItemType Directory | Out-Null
+
 # Logon
 
     # ENV
