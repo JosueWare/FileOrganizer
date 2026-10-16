@@ -1,0 +1,14 @@
+{
+    "General": {
+        "YES_OR_NOT": "[Y] Yes | [N] No"
+    },
+    "Menu": {
+        "InvalidResponse": "Invalid response",
+        "questStartORG": "Do you want to start organizing now?"
+    },
+    "MoveItems": {
+        "Moving": "Moving..",
+        "Finished": "Finished!",
+        "questGoBackToMainMenu": "Would you like to return to the beginning?"
+    }
+}

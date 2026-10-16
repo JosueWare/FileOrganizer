@@ -93,6 +93,7 @@ Write-Host $Lang.General.YES_OR_NOT
         switch ($questStart_FileOrganizer) {
 
             "S" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
+            "Y" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
             "N" {& $ExitTerminalSession}
 
             Default {

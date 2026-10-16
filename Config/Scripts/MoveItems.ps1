@@ -58,6 +58,7 @@ $questBackToMainMenu = Read-Host
     switch ($questBackToMainMenu) {
 
         "S" {& $BackToMainMenu}
+        "Y" {& $BackToMainMenu}
         "N" {& $ExitTerminalSession}
 
         Default {
