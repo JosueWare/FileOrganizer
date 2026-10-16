@@ -4,10 +4,12 @@ Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 $fileLang = "pt-BR"
 
 # Config Language
-$Lang = Get-Content (Join-Path -Path "Lang" -ChildPath "${fileLang}.json")
+$Lang = Get-Content (Join-Path -Path "Lang" -ChildPath "${fileLang}.json") | ConvertFrom-Json
 
 # Auto DIR
-New-Item ".env" -ItemType Directory | Out-Null
+if (-not (Test-Path ".env")) {
+    New-Item ".env" -ItemType Directory | Out-Null
+}
 
 # Logon
 
