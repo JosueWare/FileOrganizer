@@ -32,9 +32,9 @@ if (-not (Test-Path ".env")) {
         [scriptblock]$InvalidResponse = {
             Clear-Host
 
-                Write-Host "" <##>
+                Write-Host "" 
             Write-Host $Lang.Menu.InvalidResponse -ForegroundColor Red
-                Write-Host "" <##>
+                Write-Host "" 
         }
         [scriptblock]$BackToMainMenu = {
             & (Join-Path -Path "GUI" -ChildPath @("Main", "Menu"))
@@ -74,19 +74,19 @@ if (-not (Test-Path ".env")) {
 
 # Menu
 Clear-Host
+    Write-Host "" 
+Write-Host "                FileOrganizer"
+    Write-Host "" 
 
-        Write-Host "" <##>
-    Write-Host "                FileOrganizer"
-        Write-Host "" <##>
+    Start-Sleep -Seconds 1
 
-        Start-Sleep -Seconds 1
-
-        Write-Host "" <##>
-    Write-Host $Lang.Menu.questStartORG
-        Write-Host "" <##>
-        Start-Sleep -Seconds 1
-    Write-Host $Lang.General.YES_OR_NOT
-        Write-Host "" <##>
+    Write-Host "" 
+Write-Host $Lang.Menu.questStartORG
+    Write-Host "" 
+    Start-Sleep -Seconds 1
+Write-Host "    " -NoNewline
+Write-Host $Lang.General.YES_OR_NOT
+    Write-Host "" 
 
     $questStart_FileOrganizer = Read-Host
 
