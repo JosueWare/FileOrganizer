@@ -1,14 +1,14 @@
 {
     "General": {
-        "YES_OR_NOT": "        [S] Sim | [N] Não"
+        "YES_OR_NOT": "[S] Sim | [N] Não"
     },
     "Menu": {
-        "InvalidResponse": "        Resposta inválida",
-        "questStartORG": "        Deseja iniciar a organização agora?"
+        "InvalidResponse": "Resposta inválida",
+        "questStartORG": "Deseja iniciar a organização agora?"
     },
     "MoveItems": {
-        "Moving": "    Movendo..",
-        "Finished": "    Finalizado!",
-        "questGoBackToMainMenu": "    Deseja voltar ao início?"
+        "Moving": "Movendo..",
+        "Finished": "Finalizado!",
+        "questGoBackToMainMenu": "Deseja voltar ao início?"
     }
 }

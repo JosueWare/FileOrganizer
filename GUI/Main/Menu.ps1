@@ -32,7 +32,8 @@ if (-not (Test-Path ".env")) {
         [scriptblock]$InvalidResponse = {
             Clear-Host
 
-                Write-Host "" 
+                Write-Host ""
+            Write-Host "    " -NoNewline
             Write-Host $Lang.Menu.InvalidResponse -ForegroundColor Red
                 Write-Host "" 
         }
@@ -80,11 +81,12 @@ Write-Host "                FileOrganizer"
 
     Start-Sleep -Seconds 1
 
-    Write-Host "" 
+    Write-Host ""
+Write-Host "    " -NoNewline
 Write-Host $Lang.Menu.questStartORG
     Write-Host "" 
     Start-Sleep -Seconds 1
-Write-Host "    " -NoNewline
+Write-Host "        " -NoNewline
 Write-Host $Lang.General.YES_OR_NOT
     Write-Host "" 
 

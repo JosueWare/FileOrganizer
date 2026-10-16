@@ -8,6 +8,7 @@ $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 Clear-Host
 
     Write-Host ""
+Write-Host "    " -NoNewline
 Write-Host $Lang.MoveItems.Moving -ForegroundColor Yellow -NoNewline
 
     Start-Sleep -Seconds 1
@@ -41,15 +42,18 @@ Write-Host $Lang.MoveItems.Moving -ForegroundColor Yellow -NoNewline
         foreach ($list in $listed_Musics) {
             Move-Item -Path "Media\$list" -Destination $target_MyMsc -ErrorAction SilentlyContinue
         }
-
+Write-Host " " -NoNewline
 Write-Host $Lang.MoveItems.Finished -ForegroundColor Green
     Write-Host ""
 
     Start-Sleep -Milliseconds 500
 
     Write-Host ""
+
+Write-Host "    " -NoNewline
 Write-Host $Lang.MoveItems.questGoBackToMainMenu
     Write-Host ""
+Write-Host "        " -NoNewline
 Write-Host $Lang.General.YES_OR_NOT
     Write-Host ""
 
