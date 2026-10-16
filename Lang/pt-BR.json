@@ -1,6 +1,6 @@
 {
     "General": {
-        "YES_OR_NO": "        [S] Sim | [N] Não"
+        "YES_OR_NOT": "            [S] Sim | [N] Não"
     },
     "Menu": {
         "InvalidResponse": "        Resposta inválida",

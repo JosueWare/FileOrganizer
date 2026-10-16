@@ -33,7 +33,7 @@ if (-not (Test-Path ".env")) {
             Clear-Host
 
                 Write-Host "" <##>
-            Write-Host "    Resposta inválida" -ForegroundColor Red
+            Write-Host $Lang.Menu.InvalidResponse -ForegroundColor Red
                 Write-Host "" <##>
         }
         [scriptblock]$BackToMainMenu = {
@@ -82,10 +82,10 @@ Clear-Host
         Start-Sleep -Seconds 1
 
         Write-Host "" <##>
-    Write-Host "    Deseja iniciar a organização agora?"
+    Write-Host $Lang.Menu.questStartORG
         Write-Host "" <##>
         Start-Sleep -Seconds 1
-    Write-Host "        [S] Sim | [N] Não"
+    Write-Host $Lang.General.YES_OR_NOT
         Write-Host "" <##>
 
     $questStart_FileOrganizer = Read-Host
