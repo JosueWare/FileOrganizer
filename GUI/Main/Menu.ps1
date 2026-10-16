@@ -1,10 +1,18 @@
 Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 
 # Select Language
-$fileLang = "pt-BR"
+if (((Get-Culture).Name) -eq "pt-BR") {
+    $currentLanguage = (Get-Culture).Name
+}
+elseif (((Get-Culture).Name) -eq "en-US") {
+    $currentLanguage = (Get-Culture).Name
+}
+else { <# fallback #>
+    $currentLanguage = "en-US"
+}
 
 # Config Language
-$Lang = Get-Content (Join-Path -Path "Lang" -ChildPath "${fileLang}.json") | ConvertFrom-Json
+$Lang = Get-Content (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
 
 # Auto DIR
 if (-not (Test-Path ".env")) {
