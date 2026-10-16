@@ -8,7 +8,7 @@ $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 Clear-Host
 
     Write-Host ""
-Write-Host "    Movendo.." -ForegroundColor Yellow -NoNewline
+Write-Host $Lang.MoveItems.Moving -ForegroundColor Yellow -NoNewline
 
     Start-Sleep -Seconds 1
 
@@ -42,15 +42,15 @@ Write-Host "    Movendo.." -ForegroundColor Yellow -NoNewline
             Move-Item -Path "Media\$list" -Destination $target_MyMsc -ErrorAction SilentlyContinue
         }
 
-Write-Host " Pronto" -ForegroundColor Green
+Write-Host $Lang.MoveItems.Finished -ForegroundColor Green
     Write-Host ""
 
     Start-Sleep -Milliseconds 500
 
     Write-Host ""
-Write-Host "    Deseja voltar ao início?"
+Write-Host $Lang.MoveItems.questGoBackToMainMenu
     Write-Host ""
-Write-Host "        [S] Sim | [N] Não"
+Write-Host $Lang.General.YES_OR_NOT
     Write-Host ""
 
 $questBackToMainMenu = Read-Host

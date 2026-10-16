@@ -8,7 +8,7 @@
     },
     "MoveItems": {
         "Moving": "    Movendo..",
-        "Finished": "    Pronto",
-        "GoBackToMainMenu": "    Deseja voltar ao início?"
+        "Finished": "    Finalizado!",
+        "questGoBackToMainMenu": "    Deseja voltar ao início?"
     }
 }
