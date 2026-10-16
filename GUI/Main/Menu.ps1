@@ -12,7 +12,7 @@ else { <# fallback #>
 }
 
 # Config Language
-$Lang = Get-Content (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
+$Lang = Get-Content -Raw (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
 
 # Auto DIR
 if (-not (Test-Path ".env")) {
