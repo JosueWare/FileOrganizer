@@ -1,7 +1,12 @@
 # Changelog
 
-## 1.0.7x (Unreleased)
+## 1.1.0x (Unreleased)
 23-09-2026
+
+### Added
+Novos pacotes de traduções:
+- `en-US.json`
+- `pt-BR.json`
 
 ### Changed
 - Mudanças nas estruturas dos scripts `.ps1`.
