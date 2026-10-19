@@ -1,13 +1,10 @@
 Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
 
 # Select Language
-if (((Get-Culture).Name) -eq "pt-BR") {
+if (Get-Command "Get-Culture" -ErrorAction SilentlyContinue) {
     $currentLanguage = (Get-Culture).Name
 }
-elseif (((Get-Culture).Name) -eq "en-US") {
-    $currentLanguage = (Get-Culture).Name
-}
-else { <# fallback #>
+else {
     $currentLanguage = "en-US"
 }
 
