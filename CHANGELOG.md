@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0x (Unreleased)
+## 1.1.0 [Beta]
 23-09-2026
 
 ### Added
