@@ -1,4 +1,4 @@
-Set-Location "$PSScriptRoot/../.."
+Set-Location "$PSScriptRoot/.."
 
 # Select Language
 if (Get-Command "Get-Culture" -ErrorAction SilentlyContinue) {
@@ -46,7 +46,7 @@ if (-not (Test-Path ".env")) {
                 Write-Host "" 
         }
         [scriptblock]$BackToMainMenu = {
-            & (Join-Path -Path "GUI" -ChildPath @("Main", "Menu"))
+            & (Join-Path -Path "Main" -ChildPath "Menu.ps1")
         }
 
         # Make Dir
@@ -102,8 +102,8 @@ Write-Host $Lang.General.YES_OR_NOT
 
         switch ($questStart_FileOrganizer) {
 
-            "S" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
-            "Y" {& (Join-Path -Path "Config" -ChildPath @("Scripts", "MoveItems.ps1"))}
+            "S" {& (Join-Path -Path "Config" -ChildPath "MoveItems.ps1")}
+            "Y" {& (Join-Path -Path "Config" -ChildPath "MoveItems.ps1")}
             "N" {& $ExitTerminalSession}
 
             Default {
