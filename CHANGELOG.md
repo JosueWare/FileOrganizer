@@ -8,6 +8,9 @@ Novos pacotes de traduções:
 - `en-US.json`
 - `pt-BR.json`
 
+Novo script gerador de logs:
+- `Config/GenerateLog.ps1`
+
 ### Changed
 - Mudanças nas estruturas dos scripts `.ps1`.
   Todas as orientações de diretórios foram modificada para uma forma mais segura sem ter que depender de barras invertidas `\`

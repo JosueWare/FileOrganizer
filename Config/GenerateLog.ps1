@@ -18,9 +18,9 @@ if ($GenerateLog -eq $true) {
         Set-Content -Path "Logs/${logfileName}.log" -Value $contentFileLog
     }
     else {
-        Write-Host "Log type not specified"
+        Write-Host "Log type not specified" -ForegroundColor Red
     }
 }
 else {
-    Write-Host "Log response is FALSE"
+    Write-Host "Log response is FALSE" -ForegroundColor Red
 }
