@@ -8,7 +8,14 @@ if ($GenerateLog -eq $true) {
         $nowHour = Get-Date -Format "HH:mm:ss"
         
         # Set content log file
-        $contentFileLog = @()
+        $contentFileLog = @(
+            "Executado em ${nowDate} as ${nowhour}"
+            "FileOrganizer"
+        )
+
+        # Finish
+        New-Item -Path "Logs/${logfileName}.log" | Out-Null
+        Set-Content -Path "Logs/${logfileName}.log" -Value $contentFileLog
     }
     else {
         Write-Host "Log type not specified"
