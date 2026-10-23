@@ -1,14 +1,10 @@
 # ENV
 
     # "Menu.ps1"
-    $MainScript = @(
-        (Join-Path (Join-Path "GUI" "Main") "Menu.ps1")
-    )
+    $MainScript = Resolve-Path "Main/Menu.ps1"
 
-    # Depedences "dpPwsh.ps1"
-    $Depedences = @(
-        (Join-Path (Join-Path (Join-Path "GUI" "Main") "Depedences") "dpPwsh.ps1")
-    )
+    # Depedences "Pwsh.ps1"
+    $Depedences = Resolve-Path "Main/Depedences/Pwsh.ps1"
 
 # Start
 if (Get-Command "pwsh" -ErrorAction SilentlyContinue) {
