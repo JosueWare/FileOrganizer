@@ -20,6 +20,7 @@ if (-not (Test-Path ".env")) {
 
     # Scripts
     & "Config/CheckFolders.ps1"
+    & "Config/Cleaner.ps1"
 
     # ENV
 
