@@ -1,26 +1,13 @@
 Set-Location "$PSScriptRoot/.."
 
-# Select Language
-if (Get-Command "Get-Culture" -ErrorAction SilentlyContinue) {
-    $currentLanguage = (Get-Culture).Name
-}
-else {
-    $currentLanguage = "en-US"
-}
+# Startup Scripts
+. "Config/CheckFolders.ps1"
+. "Config/SetLanguage.ps1"
 
 # Config Language
 $Lang = Get-Content -Raw (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
 
-# Auto DIR
-if (-not (Test-Path ".env")) {
-    New-Item ".env" -ItemType Directory | Out-Null
-}
-
 # Logon
-
-    # Scripts
-    & "Config/CheckFolders.ps1"
-    & "Config/Cleaner.ps1"
 
     # ENV
 

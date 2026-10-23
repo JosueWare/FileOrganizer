@@ -49,7 +49,8 @@ Write-Host $Lang.MoveItems.Moving -ForegroundColor Yellow -NoNewline
 Write-Host " " -NoNewline
 Write-Host $Lang.MoveItems.Finished -ForegroundColor Green
     Write-Host ""
-
+    
+& "Config/Cleaner.ps1"
 & "Config/GenerateLog.ps1"
 
     Start-Sleep -Milliseconds 500
