@@ -1,11 +1,8 @@
 Set-Location "$PSScriptRoot/.."
 
-# ENV
-$currentLanguage = ""
-
 # Startup Scripts
 & "Config/Functions/CheckFolders.ps1"
-& "Config/Functions/SetLanguage.ps1"
+. "Config/Functions/SetLanguage.ps1"
 
 # Config Language
 $Lang = Get-Content -Raw (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
@@ -93,8 +90,8 @@ Write-Host $Lang.General.YES_OR_NOT
 
         switch ($questStart_FileOrganizer) {
 
-            "S" {& (Join-Path -Path "Config" -ChildPath "MoveItems.ps1")}
-            "Y" {& (Join-Path -Path "Config" -ChildPath "MoveItems.ps1")}
+            "S" {& "Config/Functions/MoveItems.ps1"}
+            "Y" {& "Config/Functions/MoveItems.ps1"}
             "N" {& $ExitTerminalSession}
 
             Default {
