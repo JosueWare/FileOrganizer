@@ -50,6 +50,8 @@ Write-Host " " -NoNewline
 Write-Host $Lang.MoveItems.Finished -ForegroundColor Green
     Write-Host ""
 
+& "Config/GenerateLog.ps1"
+
     Start-Sleep -Milliseconds 500
 
     Write-Host ""
