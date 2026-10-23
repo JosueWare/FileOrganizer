@@ -4,6 +4,10 @@ $target_MyPics = Join-Path -Path $folderMyPictures -ChildPath "FileOrganizer"
 $target_MyVids = Join-Path -Path $folderMyVideos -ChildPath "FileOrganizer"
 $target_MyMsc = Join-Path -Path $folderMyMusics -ChildPath "FileOrganizer"
 
+# GEN LOG
+[bool]$GenerateLog = $true
+[string]$GenTypeLog = "FileOrganizer"
+
 # GUI
 Clear-Host
 
