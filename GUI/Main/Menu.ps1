@@ -1,4 +1,4 @@
-Set-Location (Join-Path -Path $PSScriptRoot -ChildPath @("..", ".."))
+Set-Location "$PSScriptRoot/../.."
 
 # Select Language
 if (Get-Command "Get-Culture" -ErrorAction SilentlyContinue) {
@@ -17,6 +17,9 @@ if (-not (Test-Path ".env")) {
 }
 
 # Logon
+
+    # Scripts
+    & "Config/CheckFolders.ps1"
 
     # ENV
 

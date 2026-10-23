@@ -1,5 +1,6 @@
 # [Root] Folders
 /.env
 /Media
+/Logs
 /.private/*
 !.gitkeep
