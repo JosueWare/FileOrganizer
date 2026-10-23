@@ -1,8 +1,8 @@
 Set-Location "$PSScriptRoot/.."
 
 # Startup Scripts
-. "Config/CheckFolders.ps1"
-. "Config/SetLanguage.ps1"
+& "Config/Functions/CheckFolders.ps1"
+& "Config/Functions/SetLanguage.ps1"
 
 # Config Language
 $Lang = Get-Content -Raw (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.json") | ConvertFrom-Json
@@ -10,6 +10,8 @@ $Lang = Get-Content -Raw (Join-Path -Path "Lang" -ChildPath "${currentLanguage}.
 # Logon
 
     # ENV
+
+        $currentLanguage = ""
 
         # System Folders
         $folderMyDocuments = [System.Environment]::GetFolderPath('MyDocuments')
